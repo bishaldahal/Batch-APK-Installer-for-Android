@@ -59,4 +59,5 @@ echo Installation summary:
 echo Installed !installedCount! APK(s).
 echo Skipped !skippedCount! APK(s).
 
+pause
 endlocal
