@@ -1,6 +1,10 @@
 @echo off
 setlocal enabledelayedexpansion
 
+:: Initialize counters for installed and skipped APKs
+set /a installedCount=0
+set /a skippedCount=0
+
 :: Ask the user for the path to aapt
 set /p aaptPath="Enter the path to your aapt tool (e.g., E:\AndroidSdk\SDK\build-tools\30.0.3): "
 
@@ -10,6 +14,12 @@ set PATH=%PATH%;%aaptPath%
 :: Check if aapt is accessible
 aapt version >nul 2>&1 || (
     echo aapt not found in the provided path. Aborting.
+    exit /b
+)
+
+:: Check if adb is accessible
+adb version >nul 2>&1 || (
+    echo adb not found in the PATH. Aborting.
     exit /b
 )
 
@@ -33,9 +43,20 @@ for %%F in (*.apk) do (
     if "!installedPackage!"=="" (
         echo Installing !packageName!
         adb install "%%F"
+        if errorlevel 1 (
+            echo Failed to install !packageName!. Aborting.
+            exit /b
+        )
+        set /a installedCount+=1
     ) else (
         echo Skipping !packageName!, already installed.
+        set /a skippedCount+=1
     )
 )
+
+echo.
+echo Installation summary:
+echo Installed !installedCount! APK(s).
+echo Skipped !skippedCount! APK(s).
 
 endlocal
