@@ -18,17 +18,12 @@ Download both from the [Android developer website](https://developer.android.com
 1. Connect your Android device to your computer.
 2. Enable USB debugging on your device.
 3. Copy the `install.bat` script to the directory containing the APK files you want to install.
-3. Open a command prompt and navigate to the directory containing the APK files and the `install.bat` script.
-4. Run the script with the following command:
+4. Double click the `install.bat` file.
+5. Follow the instruction
 
-```sh
-install.bat
-
-#When prompted, enter the full path to the directory that contains aapt.exe.
-```
 OR
 
-4. Open command prompt from the address bar of file explorer by typing `cmd.exe` and pressing Enter form the APK directory.
+4. Open a command prompt and navigate to the directory containing the APK files and the `install.bat` script.
 5. Run the script with the following command:
 
 ```sh
