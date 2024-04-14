@@ -46,4 +46,4 @@ We'll review your pull request and merge it if everything looks good.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
