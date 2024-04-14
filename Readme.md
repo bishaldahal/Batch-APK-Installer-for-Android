@@ -47,3 +47,4 @@ We'll review your pull request and merge it if everything looks good.
 ## License
 
 This project is licensed under the MIT License.
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=Batch-APK-Installer-for-Android&label=Repo%20views" alt="Total Views" /> </p>
